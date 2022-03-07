@@ -27,7 +27,7 @@ create route for users
 # user model
 create user model
 
-for validations download @hapi/joi package -- npm i @hapi/joi
+for validations download joi package -- npm i joi
 build model for users model/user.js -- the model should export a validation function and the Model's class
 11:save user
 write route function for user creation
@@ -62,42 +62,42 @@ crypto.randomBytes(16).toString('hex')
 # auth middleware
 create new file /middleware/auth.js
 write a function to validate user by jwt token
-12: user me
+# user me
 add endpoint for GET /api/users/me
 use auth middleware
 if user authenticated return logged user's document, don't forget to remove the password field.
-13: cards
+# cards
 create a unique index on bizNumber filed at cards collection
 db.cards.createIndex( { "bizNumber": 1 }, { unique: true } )
-13: card model
+# card model
 create a /model/card.js
-import @hapi/Joi
+import Joi
 import mongoose
 create and export a card model using mongoose schema
 create and export a validation function using @hapi/joi
-13: card routes
+# card routes
 create new route at /api/cards
 create route module for cards at /routes/card.js
-13: reference user
+# reference user
 create a reference user field on cards model
-13: biz random
+# biz random
 create and export a function which will generate a random number that doesn't exist in the db yet
 create a protected route on /api/auth that will show the generated numbers
-13: add card
+# add card
 on POST /api/cards
 validate body info
 create new document using body info generateBizNumber and req.user.id
 send created document back
-14: get card
+# get card
 create GET /api/cards/:id end-point
 return card document as id specifies in case the logged user is the user who created the card
-14: update card
+# update card
 create PUT /api/cards/:id end-point
 allow to update and return the updated document
-14: remove card
+# remove card
 create DELETE /api/cards/:id end-point
 allow to delete card in case user created it
-14: user cards
+# user cards
 add to user schema "card" field of type array
 create a validation function for card field
 create PATCH /api/users/cards end-point
@@ -105,6 +105,6 @@ validate body with the validation function for card's field
 validate received cards bizNumbers existence
 update user's card field to the received bizNumbers
 return the user's document
-14: get cards
+# get cards
 create GET /api/users/cards?numbers=bizNumber,bizNumber...
 retrieve from DB all biz specified in Numbers query
