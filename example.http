@@ -1,0 +1,60 @@
+@local=http://localhost:3000
+
+
+
+
+POST {{local}}/api/users
+Content-Type: application/json
+
+{
+    "name": "ofri",
+    "email": "off@gmail.com",
+    "password": "dfkdk3jh55",
+    "biz": true
+}
+
+###
+
+POST {{local}}/api/auth
+Content-Type: application/json
+
+{
+    "email": "off@gmail.com",
+    "password": "dfkdk3jh55"
+}
+
+###
+GET {{local}}/api/users/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWQ5NTQ3NGQ0MWExZjM2YzliZjcwNjEiLCJiaXoiOnRydWUsImlhdCI6MTY0MjU3MTYyNX0.1A9YmbgD9gYcoMOQBVOXc3Ln8mYbtmtur7qYfZbWN-E
+
+###
+POST {{local}}/api/cards
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWQ5NTQ3NGQ0MWExZjM2YzliZjcwNjEiLCJiaXoiOnRydWUsImlhdCI6MTY0MjU3MTYyNX0.1A9YmbgD9gYcoMOQBVOXc3Ln8mYbtmtur7qYfZbWN-E
+Content-Type: application/json
+
+{
+    "bizName": "KSP",
+    "bizDescription": "computers shop 1",
+    "bizAddress": "Herzel 8",
+    "bizPhoneNumber": "04-9800501"
+}
+
+### get card by id
+GET {{local}}/api/cards/61d9780241c43df81cc42497
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWQ5NTQ3NGQ0MWExZjM2YzliZjcwNjEiLCJiaXoiOnRydWUsImlhdCI6MTY0MjU3MTYyNX0.1A9YmbgD9gYcoMOQBVOXc3Ln8mYbtmtur7qYfZbWN-E
+
+###
+PUT  {{local}}/api/cards/61d9780241c43df81cc42497
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWQ5NTQ3NGQ0MWExZjM2YzliZjcwNjEiLCJiaXoiOnRydWUsImlhdCI6MTY0MjU3MTYyNX0.1A9YmbgD9gYcoMOQBVOXc3Ln8mYbtmtur7qYfZbWN-E
+Content-Type: application/json
+
+{
+    "bizName": "Computers LS ",
+    "bizDescription": "computers shop tech",
+    "bizAddress": "Herzel 9",
+    "bizPhoneNumber": "04-9867501"
+}
+
+###
+GET {{local}}/api/cards/61d95474d41a1f36c9bf7061/all
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWQ5NTQ3NGQ0MWExZjM2YzliZjcwNjEiLCJiaXoiOnRydWUsImlhdCI6MTY0MjU3MTYyNX0.1A9YmbgD9gYcoMOQBVOXc3Ln8mYbtmtur7qYfZbWN-E
