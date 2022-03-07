@@ -1,14 +1,14 @@
 # node-restApi
-run commands
+# run commands
 cd {project directory} npm init -y npm i express mongoose npm i -D nodemon @types/express @types/mongoose
 
-initial setup
+# initial setup
 create app.js in root directory
 change "main" key in package.json to "app.js"
 enter a new script key in package.json "start":"node app.js"
 enter a new script key in package.json "start:watch":"nodemon app.js"
-11:entry point
-app.js
+# entry point
+# app.js
 Connect and configure express server and mongoose module
 
 configure a new express app
@@ -16,15 +16,15 @@ connect the express app to a node server instance
 connect to a mongodb server using mongoose
 connect "express.json()" middleware
 configure node server instance to listen to port 3000
-11:users
+# users
 create a user collection with a unique email field
 
 create a collection named users under your selected db
 create a unique index for email field on the users collection
-11:routing
+# routing
 create route for users
 
-11:user model
+# user model
 create user model
 
 for validations download @hapi/joi package -- npm i @hapi/joi
@@ -36,22 +36,22 @@ perform validation on request's body
 create user object with mongoose model if valid
 upload user to db
 return user's data object from db
-11: lodash
+# lodash
 return user information in case all validations were passed
-12: auth
+# auth
 create new endpoint /api/auth
 create auth router
-12: signin
+# signin
 validate body
 validate user existence
 validate password
 return ok
-12:jwt
+# jwt
 install jsonwebtoken package
 npm i jsonwebtoken
 add generateToken method to user's model
 on /auth endpoint in case all valid send token
-12: config
+# config
 install config package
 npm i config
 create config/default.json
@@ -59,7 +59,7 @@ insert "jwtKey": "private key" in the created file
 you can create a random key by running the following commands in cmd
 node
 crypto.randomBytes(16).toString('hex')
-12: auth middleware
+# auth middleware
 create new file /middleware/auth.js
 write a function to validate user by jwt token
 12: user me
